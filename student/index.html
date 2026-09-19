@@ -32,9 +32,15 @@
     <h2>처음에는,<br>세 가지만 해주세요.</h2>
     <ol class="start-list">
       <li><span>01</span><div><h3>Codex 실행·로그인</h3><p>내 PC에서 파일을 읽고 명령을 실행하는 로컬 작업을 엽니다.</p><a class="text-link" href="https://developers.openai.com/codex/app/" target="_blank" rel="noopener">공식 시작 안내 ↗</a></div></li>
-      <li><span>02</span><div><h3>실습 폴더 열기</h3><p>수업 배포자료를 한 폴더에 풀고 Codex에서 그 폴더를 선택합니다. 자료가 아직 없어도 설치 점검은 가능합니다.</p></div></li>
+      <li><span>02</span><div><h3>실습 폴더 열기</h3><p>수업 배포자료를 내 PC에 풀고, 그 폴더를 Codex의 로컬 작업 폴더로 선택합니다.</p><a class="text-link" href="#local-folder">폴더 준비와 연결 방법 보기 ↓</a></div></li>
       <li><span>03</span><div><h3>준비 요청문 전달</h3><p>아래 요청문을 Codex에 보냅니다. 설치·설정은 맡기고, 로그인·관리자 승인·필요한 재시작을 직접 합니다.</p></div></li>
     </ol>
+  </section>
+  <section class="setup-guide band" id="local-folder">
+    <p class="eyebrow">LOCAL WORKSPACE</p><h2>같은 실습 폴더를<br>QGIS와 Codex에서 엽니다.</h2>
+    <p><strong>로컬 폴더 연결</strong>은 Codex에게 “이 폴더의 자료로 작업해 줘”라고 작업 위치를 정해주는 것입니다. QGIS와 통신하는 <strong>MCP 연결</strong>은 별도로 확인합니다.</p>
+    <ol><li><strong>파일 탐색기에서 실습 전용 폴더를 만듭니다.</strong><br>예를 들어 문서 폴더 안에 <code>단지계획실습</code>을 만듭니다. 이름과 위치는 자유이며, 나중에 다시 찾을 수 있는 곳이면 됩니다.</li><li><strong>배포 ZIP을 이 폴더에 모두 풉니다.</strong><br>ZIP 안에서 바로 실행하지 않습니다. 배포본의 하위 폴더 구조를 유지하고 QGZ만 따로 옮기지 않습니다. 원본 ZIP은 보관합니다.</li><li><strong>실제 자료가 들어 있는 폴더의 경로를 확인합니다.</strong><br>압축을 풀면서 폴더가 한 겹 더 생길 수 있습니다. 파일 탐색기에서 QGZ와 데이터가 있는 위치로 들어간 뒤 주소 표시줄을 눌러 전체 경로를 확인합니다.</li><li><strong>Codex에서 해당 폴더를 프로젝트로 추가합니다.</strong><br>로컬 폴더를 선택하는 화면에서 방금 확인한 폴더를 선택합니다. 앱 버전에 따라 프로젝트 추가·폴더 열기 등의 이름으로 표시될 수 있습니다. ZIP이나 QGZ 파일 하나가 아니라 <strong>폴더</strong>를 선택합니다.</li><li><strong>그 프로젝트 안에서 로컬 작업을 시작합니다.</strong><br>작업 위치가 내 PC의 실습 폴더인지 확인합니다. 로컬·워크트리·클라우드 선택이 있다면 이 실습은 <strong>로컬</strong>을 사용합니다. 일반 웹 채팅에 폴더 경로만 적는 것으로는 내 PC 폴더가 연결되지 않습니다.</li><li><strong>Codex에게 폴더를 제대로 열었는지 확인시킵니다.</strong><br>“현재 작업 폴더의 전체 경로와 바로 아래 파일 목록을 보여 줘. QGZ와 GPKG가 어디에 있는지도 찾아 줘.”라고 요청합니다. 파일 탐색기에 보이는 파일명과 같은지 비교합니다.</li></ol>
+    <p>QGZ는 지도의 구성과 표시 설정을 담는 프로젝트 파일이고, GPKG는 실제 지도 데이터를 담는 파일 형식입니다. 배포본에 다른 데이터 폴더가 있으면 그것도 함께 유지합니다. Codex가 폴더 파일을 볼 수 있어도 QGIS MCP 연결까지 끝난 것은 아닙니다.</p>
   </section>
   <section class="setup-guide band" id="qgis-setup">
     <p class="eyebrow">QGIS + QGIS MCP</p>
@@ -50,6 +56,11 @@
       <figure><img src="assets/codex-configurator.png" width="592" height="667" loading="lazy" alt="QGIS MCP Setup & Configurator. Client codex, 자동 서버 시작 체크, 포트 9876 실행 중. 아래에는 0.13.1과 0.14.1 혼재 경고가 표시됨"><figcaption>제공된 실제 설정 화면 · 아래 주황색 문구는 버전 불일치 경고가 있는 예시입니다.</figcaption></figure>
       <div><h3>이 창에서는 이렇게 확인하세요.</h3><ol><li><strong>Client: codex</strong><br>연결할 프로그램을 Codex로 선택합니다.</li><li><strong>Always pull latest server from GitHub: 해제</strong><br>매번 새 버전을 받는 옵션입니다. 수업에서는 꺼둡니다.</li><li><strong>Start MCP server automatically when QGIS opens: 체크</strong><br>다음 실행부터 서버가 자동으로 켜지도록 합니다.</li><li><strong>Server: running on port 9876</strong><br>QGIS 쪽 서버가 실행 중이라는 뜻입니다. Codex 연결 완료를 의미하지는 않습니다.</li><li><strong>Copy 버튼으로 명령을 복사해 Codex에게 전달</strong><br>“이 설정으로 QGIS에 연결해 줘. 설치된 플러그인과 연결 프로그램의 버전도 맞춰 줘.”라고 함께 보냅니다. 이미 연결되어 있다면 다시 등록할 필요는 없습니다.</li></ol><p>긴 명령어를 직접 해석하거나 수정할 필요는 없습니다. <strong>QGIS 안의 플러그인과 Codex 쪽 연결 프로그램이 서로 맞는 버전이어야 한다</strong>는 점만 기억하세요. 확인과 설정은 Codex에게 맡깁니다.</p><p><strong>주황색 경고가 있으면</strong> 이 창을 캡처해 Codex에 보내고 “버전이 다르다는 경고가 나와. 원인을 확인하고 연결되게 고쳐 줘.”라고 요청하세요.</p><a class="text-link" href="#studio">준비 요청문과 연결 확인으로 이동 ↓</a></div>
     </div>
+  </section>
+  <section class="setup-guide band" id="before-connect">
+    <p class="eyebrow">BEFORE YOU CONNECT</p><h2>QGIS를 먼저 켜두세요.</h2>
+    <p>설치와 설정이 끝났다면 <strong>QGIS 실행 → 실습 프로젝트 열기 → MCP 서버 실행 확인 → Codex에서 연결 점검</strong> 순서로 진행합니다. QGIS가 꺼져 있으면 플러그인 서버와 연결할 수 없습니다.</p>
+    <ol><li><strong>QGIS를 켜고 실습 폴더의 QGZ를 엽니다.</strong> 프로젝트 로딩이 끝나고 지도가 표시될 때까지 기다립니다. 자료가 아직 없으면 빈 프로젝트로 연결부터 확인할 수 있습니다.</li><li><strong>QGIS MCP 아이콘이 켜져 있는지 확인합니다.</strong> 꺼져 있다면 아이콘을 눌러 서버를 시작합니다. 여러 QGIS 창이 열려 있다면 저장할 작업을 먼저 저장하고 실습할 창만 남깁니다.</li><li><strong>QGIS를 켜둔 채 Codex의 같은 실습 폴더 작업으로 돌아옵니다.</strong> 아래 실습 02의 연결 확인 요청문을 보냅니다. 여기서 GPT에게 요청한다는 것은 로컬 Codex에서 대화한다는 뜻입니다.</li><li><strong>작업 중에는 QGIS를 종료하지 않습니다.</strong> 연결 설정 변경으로 Codex만 다시 시작하라는 안내를 받았다면 QGIS는 켜둡니다. QGIS도 재시작했다면 프로젝트와 MCP 서버를 다시 확인하고 연결 점검을 반복합니다.</li></ol>
   </section>
   <section class="studio band" id="studio">
     <div class="section-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h2>한 단계씩, 같이.</h2></div><div class="progress-wrap"><span id="progress-label">완료 0 / 6</span><progress id="progress" max="6" value="0" aria-label="실습 진행도"></progress><small>이 브라우저의 자기점검 기록</small></div></div>
