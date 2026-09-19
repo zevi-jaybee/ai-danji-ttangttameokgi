@@ -196,7 +196,7 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
   <div class="nav-inner">
     <a class="brand" href="#top">단지계획 땅따먹기 <small>QGIS × CLAUDE</small></a>
     <div class="nav-links">
-      <a href="#install">설치</a><a href="#rules">규칙</a><a href="#draw">그리기</a><a href="#tables">조서</a><a href="#export">출력</a><a href="#check">검산</a><a href="#trouble">막힐 때</a><a href="#submit">제출</a>
+      <a href="#install">설치</a><a href="#rules">규칙</a><a href="#draw">그리기</a><a href="#tables">조서</a><a href="#export">출력</a><a href="#check">검산</a><a href="#trouble">막힐 때</a>
     </div>
     <a class="btn small" href="demo/">데모 파일</a>
   </div>
@@ -207,16 +207,10 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
   <div class="wrap">
     <p class="eyebrow">AI와 함께하는 단지계획 땅따먹기 · 설계스튜디오 III · 부여 군수리 12.7 ha</p>
     <h1>AI와 함께하는<br>단지계획 <em>땅따먹기</em></h1>
-    <p class="lead">QGIS 4.2에 Claude Code를 연결해 도로·가구·획지를 그리고 조서와 제원표를 만드는 절차입니다. 설치, 작업 규칙, 그리기 여섯 단계, 조서, 출력, 검산, 문제 해결, 제출물 순서입니다. 수치는 A1 부지에서 실제로 실행한 결과입니다.</p>
+    <p class="lead">QGIS 4.2에 Claude Code를 연결해 도로·가구·획지를 그리고 조서와 제원표를 만드는 절차입니다. 설치, 작업 규칙, 그리기 여섯 단계, 조서, 출력, 검산, 문제 해결 순서입니다. 그리기 단계의 기준 수치는 확정 전이므로 n으로 적었습니다.</p>
     <div class="cta">
       <a class="btn" href="#install">설치부터 시작 →</a>
       <a class="btn ghost" href="#draw">바로 그리기로</a>
-    </div>
-    <div class="stats" aria-label="이 매뉴얼의 숫자">
-      <div class="stat"><b>118</b><span>QGIS를 움직이는 도구 수</span><small>QGIS MCP 0.14.1</small></div>
-      <div class="stat"><b>1,348 m</b><span>도로 7노선, 4위계</span><small>A1 데모</small></div>
-      <div class="stat"><b>13 · 105</b><span>가구와 획지</span><small>A1 데모</small></div>
-      <div class="stat"><b>55,514 ㎡</b><span>A1 분모(표 합계의 기준)</span><small>학기 고정값 F1</small></div>
     </div>
   </div>
 </header>
@@ -328,14 +322,14 @@ claude</pre>
     <div class="sec-head">
       <p class="eyebrow">03 · 블록 · 길 · 획지</p>
       <h2>그리기 — 도로 · 가구 · 획지</h2>
-      <p>순서는 도로중심선 → 도로면 → 가구 → 획지 → 용지입니다. 아래 여섯 단계는 A1(5.551 ha)에서 실행한 것이고 그림과 표가 그 결과입니다. 안은 달라도 단계와 검산 항목은 같습니다.</p>
+      <p>순서는 도로중심선 → 도로면 → 가구 → 획지 → 용지입니다. 아래 여섯 단계는 A1에서 시험한 것입니다. 기준 수치는 확정 전이므로 n으로 적었고, 그림은 시험 결과의 예시입니다.</p>
     </div>
 
     <div class="cards" style="margin-bottom:40px">
-      <div class="card"><div class="k">기준 · 도로 위계</div><h4>4위계 이상, 최하위 6 m</h4><p>어귀길 8~10 · 안길 8 · 샛길 6 · 골목 4.2(보행자우선). 4 m를 차로로 쓰면 일방통행임을 명시. 대상지 밖 대로1류·중로2류·소로2류는 이미 주어진 상위 2위계.</p><p class="mono" style="font-size:11px;margin-top:8px">F8 · N15 K-3</p></div>
-      <div class="card"><div class="k">기준 · 가구</div><h4>격자 80~100 m</h4><p>국지도로 교차로 간격 30~100 m, 보행 격자는 그 안에 50~70 m로 한 겹 더. 가구 단변 30~50, 장변 90~130 m 계열.</p><p class="mono" style="font-size:11px;margin-top:8px">『단지계획』 p.155·246 · N15 K-3</p></div>
-      <div class="card"><div class="k">기준 · 획지</div><h4>140 ㎡ 이상 660 ㎡ 미만</h4><p>A2 기존 취락 '대' 34필지 중앙값 396 ㎡가 기준선. 유형별로 차등하되 범위 밖은 표에 '기준 미달·초과'로 표시.</p><p class="mono" style="font-size:11px;margin-top:8px">F7 · 국토부 2017 안내서 p.18</p></div>
-      <div class="card"><div class="k">기준 · 배분과 밀도</div><h4>주거 55 % · 도로 ≤ 22 % · 녹지 ≥ 13 %</h4><p>총밀도 11~17 호/ha(분모 전체 부지), 140~210호. 밀도는 반드시 분모를 병기. 건폐율은 현행 자연녹지 20 %.</p><p class="mono" style="font-size:11px;margin-top:8px">F2 · F6 · F10</p></div>
+      <div class="card"><div class="k">기준 · 도로 위계</div><h4>n위계 이상, 최하위 n m</h4><p>어귀길 n · 안길 n · 샛길 n · 골목 n(보행자우선). 대상지 밖 대로1류·중로2류·소로2류는 이미 주어진 상위 위계.</p><p class="mono" style="font-size:11px;margin-top:8px">F8 · N15 K-3</p></div>
+      <div class="card"><div class="k">기준 · 가구</div><h4>격자 n~n m</h4><p>국지도로 교차로 간격 n~n m, 보행 격자는 그 안에 n~n m로 한 겹 더. 가구 단변 n~n, 장변 n~n m.</p><p class="mono" style="font-size:11px;margin-top:8px">『단지계획』 p.155·246 · N15 K-3</p></div>
+      <div class="card"><div class="k">기준 · 획지</div><h4>n ㎡ 이상 n ㎡ 미만</h4><p>A2 기존 취락 '대' 필지 중앙값 n ㎡가 기준선. 유형별로 차등하되 범위 밖은 표에 '기준 미달·초과'로 표시.</p><p class="mono" style="font-size:11px;margin-top:8px">F7 · 국토부 2017 안내서 p.18</p></div>
+      <div class="card"><div class="k">기준 · 배분과 밀도</div><h4>주거 n % · 도로 ≤ n % · 녹지 ≥ n %</h4><p>총밀도 n~n 호/ha(분모 전체 부지). 밀도는 분모를 병기. 건폐율은 현행 자연녹지 n %.</p><p class="mono" style="font-size:11px;margin-top:8px">F2 · F6 · F10</p></div>
     </div>
 
     <div class="tbl" style="margin-bottom:40px">
@@ -381,21 +375,21 @@ claude</pre>
           <div class="body">
             <div class="text">
               <p>도로는 중심선 하나에 폭원 값을 붙여 그립니다. 도로면은 다음 단계에서 폭원으로 만듭니다. 이 단계에서 정하는 것은 위계와 폭원입니다.</p>
-              <p>방법은 둘입니다. QGIS에서 마우스로 긋거나(편집 모드 → 선 객체 추가, 스냅 켜기), 좌표나 관계를 문장으로 줍니다. 데모는 후자입니다. A1은 서쪽 변이 대로1류(259 m), 북쪽 변이 중로2류(241 m), 동쪽 변이 소로2류(137 m)입니다. 진입은 북쪽에서 받고 서쪽은 차량 출입을 막았습니다.</p>
-              <div class="say"><button class="copy" data-copy>복사</button>01_도로중심선에 선 일곱 개를 넣어 줘. R1 어귀길 8m: 북쪽 경계 x=946690에서 남쪽 A2 경계까지 남북. R2 안길 8m: y=1808400에서 서쪽 경계부터 동쪽 경계까지 동서. R3·R4 샛길 6m: y=1808465, 1808350 동서. R5 샛길 6m: x=946770, R3에서 R4까지. R6 골목 4m: x=946632, R3에서 R4까지. R7 골목 4m: y=1808312, 서쪽 경계에서 R1까지. 다 넣은 뒤 01_부지경계 A1으로 잘라내고, 노선별 연장을 EPSG:5186에서 재서 표로 보여 줘</div>
+              <p>방법은 둘입니다. QGIS에서 마우스로 긋거나(편집 모드 → 선 객체 추가, 스냅 켜기), 좌표나 관계를 문장으로 줍니다. 데모는 후자입니다. A1은 서쪽 변이 대로1류, 북쪽 변이 중로2류, 동쪽 변이 소로2류에 접합니다. 시험 판은 진입을 북쪽에서 받고 서쪽은 차량 출입을 막았습니다.</p>
+              <div class="say"><button class="copy" data-copy>복사</button>01_도로중심선에 선 n개를 넣어 줘. R1 어귀길 n m: 북쪽 경계 x=…에서 남쪽 A2 경계까지 남북. R2 안길 n m: y=…에서 서쪽 경계부터 동쪽 경계까지 동서. R3·R4 샛길 n m: y=…, … 동서. R5 샛길 n m: x=…, R3에서 R4까지. R6·R7 골목 n m: x=…, y=…. 다 넣은 뒤 01_부지경계 A1으로 잘라내고, 노선별 연장을 EPSG:5186에서 재서 표로 보여 줘</div>
               <p class="tools">도구 <code>add_features</code>(WKT) → <code>execute_code</code>(부지로 자르기, 연장)</p>
-              <p>확인: 노선 7개, 연장 합 1,348 m, 5.551 ha 기준 243 m/ha. 비교값은 황룡 한옥마을 실측 도로밀도 227 m/ha입니다.</p>
+              <p>확인: 노선 n개, 연장 합 n m, 부지 면적으로 나눈 도로밀도 n m/ha. 비교값은 황룡 한옥마을 실측 도로밀도 227 m/ha입니다.</p>
             </div>
             <div class="side">
-              <div class="fig"><figure><img src="img/step1_centerlines.png" alt="A1 부지 위에 도로중심선 7개. R1 어귀길이 남북으로, R2·R3·R4가 동서로, R5·R6 샛길과 골목이 남북으로 그어져 있다" width="1200" height="930" loading="lazy"><figcaption>II · 중심선 7노선. 굵은 붉은 선이 어귀길, 파랑이 샛길, 초록이 골목.</figcaption></figure></div>
+              <div class="fig"><figure><img src="img/step1_centerlines.png" alt="A1 부지 위에 그은 도로중심선. 어귀길이 남북으로, 안길과 샛길이 동서로, 샛길과 골목이 남북으로 그어져 있다" width="1200" height="930" loading="lazy"><figcaption>II · 중심선 n노선(예시). 굵은 붉은 선이 어귀길, 파랑이 샛길, 초록이 골목.</figcaption></figure></div>
               <div class="tbl"><table>
-                <thead><tr><th>노선</th><th>위계</th><th class="n">폭원</th><th class="n">연장 m</th></tr></thead>
+                <thead><tr><th>노선</th><th>위계</th><th class="n">폭원 m</th><th class="n">연장 m</th></tr></thead>
                 <tbody>
-                  <tr><td>R1</td><td>1 어귀길</td><td class="n">8</td><td class="n">232.4</td></tr>
-                  <tr><td>R2</td><td>2 안길</td><td class="n">8</td><td class="n">294.8</td></tr>
-                  <tr><td>R3 · R4 · R5</td><td>3 샛길</td><td class="n">6</td><td class="n">227.8 · 277.3 · 115.0</td></tr>
-                  <tr><td>R6 · R7</td><td>4 골목</td><td class="n">4</td><td class="n">115.0 · 85.8</td></tr>
-                  <tr class="total"><td colspan="3">합계 (243 m/ha)</td><td class="n">1,348.3</td></tr>
+                  <tr><td>R1</td><td>1 어귀길</td><td class="n">n</td><td class="n">n</td></tr>
+                  <tr><td>R2</td><td>2 안길</td><td class="n">n</td><td class="n">n</td></tr>
+                  <tr><td>R3 · R4 · R5</td><td>3 샛길</td><td class="n">n</td><td class="n">n</td></tr>
+                  <tr><td>R6 · R7</td><td>4 골목</td><td class="n">n</td><td class="n">n</td></tr>
+                  <tr class="total"><td colspan="3">합계 (n m/ha)</td><td class="n">n</td></tr>
                 </tbody></table></div>
             </div>
           </div>
@@ -409,13 +403,13 @@ claude</pre>
           <h3>도로면과 완충녹지</h3>
           <div class="body">
             <div class="text">
-              <p>중심선을 폭원의 절반으로 양쪽에 버퍼하면 도로면이 됩니다. 끝은 평탄(flat)으로 잘라야 교차부가 정리됩니다. 대로1류에 면한 서쪽 변은 안쪽 10 m를 완충녹지로 두고, 도로면에서 녹지를 뺍니다.</p>
-              <div class="say"><button class="copy" data-copy>복사</button>01_도로중심선을 각 노선의 폭원/2로 평탄 끝(flat cap) 버퍼해서 하나로 합치고 A1으로 잘라 02_도로면에 넣어 줘. 04_도시계획도로의 대로1류에 면한 A1 변에서 안쪽 10 m를 완충녹지로 만들어 05_용지에 '완충녹지'로 넣고, 도로면에서는 그 녹지를 빼 줘. 둘 다 면적은 EPSG:5186으로. 폭원×연장 합과 도로면 실측 면적도 같이 보여 줘</div>
+              <p>중심선을 폭원의 절반으로 양쪽에 버퍼하면 도로면이 됩니다. 끝은 평탄(flat)으로 잘라야 교차부가 정리됩니다. 대로1류에 면한 서쪽 변은 안쪽 n m를 완충녹지로 두고, 도로면에서 녹지를 뺍니다.</p>
+              <div class="say"><button class="copy" data-copy>복사</button>01_도로중심선을 각 노선의 폭원/2로 평탄 끝(flat cap) 버퍼해서 하나로 합치고 A1으로 잘라 02_도로면에 넣어 줘. 04_도시계획도로의 대로1류에 면한 A1 변에서 안쪽 n m를 완충녹지로 만들어 05_용지에 '완충녹지'로 넣고, 도로면에서는 그 녹지를 빼 줘. 둘 다 면적은 EPSG:5186으로. 폭원×연장 합과 도로면 실측 면적도 같이 보여 줘</div>
               <p class="tools">도구 <code>execute_code</code>(buffer · unaryUnion · difference) — 또는 <code>execute_processing</code> native:buffer + native:dissolve + native:clip</p>
-              <p>확인: 도로면 8,404.0 ㎡(15.1 %), 완충녹지 2,321.5 ㎡(4.2 %). 폭원×연장의 합 8,742.5 ㎡와 도로면 실측의 차이 338 ㎡는 교차부 중복과 녹지에 잘린 부분입니다. 도로조서에는 노선별 값을 남기고 합계란에는 실측값을 적습니다.</p>
+              <p>확인: 도로면 n ㎡(n %), 완충녹지 n ㎡(n %). 폭원×연장의 합과 도로면 실측의 차이는 교차부 중복과 녹지에 잘린 부분입니다. 도로조서에는 노선별 값을 남기고 합계란에는 실측값을 적습니다.</p>
             </div>
             <div class="side">
-              <div class="callout"><b>도로율 22 %는 상한입니다.</b> 데모의 15.1 %는 국지도로 6 m, 골목 4 m 기준입니다. 8 m 도로를 늘리거나 격자를 좁히면 20 %를 넘습니다. 도로와 녹지는 묶지 않고 각각 상한·하한으로 적습니다.</div>
+              <div class="callout"><b>도로율 n %는 상한입니다.</b> 폭이 넓은 도로를 늘리거나 격자를 좁히면 도로율이 오릅니다. 도로와 녹지는 묶지 않고 각각 상한·하한으로 적습니다.</div>
               <div class="callout"><b>메뉴로 하면.</b> 벡터 › 지오프로세싱 도구 › 버퍼(거리 폭원/2, 끝 유형 평탄) → 디졸브 → 잘라내기(A1).</div>
             </div>
           </div>
@@ -429,24 +423,20 @@ claude</pre>
           <h3>가구</h3>
           <div class="body">
             <div class="text">
-              <p>부지에서 도로면과 녹지를 뺀 조각이 가구입니다. 조각마다 번호를 붙이고 면적·장변·단변을 잽니다. 50 ㎡ 미만 조각은 버리고 개수와 면적을 기록합니다.</p>
-              <div class="say"><button class="copy" data-copy>복사</button>A1에서 02_도로면과 완충녹지를 빼서 남는 조각을 03_가구에 넣어 줘. 북에서 남, 서에서 동 순으로 B01부터 번호를 붙이고, 용도는 '주거'로 두고, 면적(5186)·장변·단변(최소외접사각형)을 채워 줘. 50 ㎡ 미만 조각은 버리고 몇 개를 버렸는지 알려 줘. 가구 면적 합 + 도로면 + 녹지가 55,514와 얼마나 다른지도</div>
+              <p>부지에서 도로면과 녹지를 뺀 조각이 가구입니다. 조각마다 번호를 붙이고 면적·장변·단변을 잽니다. n ㎡ 미만 조각은 버리고 개수와 면적을 기록합니다.</p>
+              <div class="say"><button class="copy" data-copy>복사</button>A1에서 02_도로면과 완충녹지를 빼서 남는 조각을 03_가구에 넣어 줘. 북에서 남, 서에서 동 순으로 B01부터 번호를 붙이고, 용도는 '주거'로 두고, 면적(5186)·장변·단변(최소외접사각형)을 채워 줘. n ㎡ 미만 조각은 버리고 몇 개를 버렸는지 알려 줘. 가구 면적 합 + 도로면 + 녹지가 부지 면적(분모)과 얼마나 다른지도</div>
               <p class="tools">도구 <code>execute_code</code>(difference → 단일 폴리곤 분리 → orientedMinimumBoundingBox)</p>
-              <p>확인: 가구 13개, 합계와 분모의 차이 1.3 ㎡(버린 조각 0.8 ㎡ + 반올림). 가구 규모 1,294~6,282 ㎡. 4,000 ㎡를 넘는 가구(B01 6,282 ㎡, 141×53 m)는 골목을 추가할 후보입니다.</p>
+              <p>확인: 가구 n개, 합계와 분모의 차이 n ㎡(버린 조각 + 반올림). 가구 규모 n~n ㎡. 기준보다 큰 가구는 골목을 추가할 후보입니다.</p>
             </div>
             <div class="side">
-              <div class="fig"><figure><img src="img/step3_blocks.png" alt="도로면으로 나뉜 가구 13개, B01부터 B13까지 번호가 붙어 있고 서쪽에 완충녹지 띠가 있다" width="1200" height="930" loading="lazy"><figcaption>IV · 가구 13개. 서쪽 초록 띠가 완충녹지 10 m.</figcaption></figure></div>
+              <div class="fig"><figure><img src="img/step3_blocks.png" alt="도로면으로 나뉜 가구에 B01부터 번호가 붙어 있고 서쪽에 완충녹지 띠가 있다" width="1200" height="930" loading="lazy"><figcaption>IV · 가구 n개(예시). 서쪽 초록 띠가 완충녹지.</figcaption></figure></div>
               <div class="tbl"><table>
-                <thead><tr><th>가구</th><th class="n">면적 ㎡</th><th class="n">장변×단변 m</th><th>가구</th><th class="n">면적 ㎡</th><th class="n">장변×단변 m</th></tr></thead>
+                <thead><tr><th>가구</th><th>용도</th><th class="n">면적 ㎡</th><th class="n">장변×단변 m</th><th class="n">획지수</th></tr></thead>
                 <tbody>
-                  <tr><td>B01</td><td class="n">6,282.3</td><td class="n">141 × 53</td><td>B08</td><td class="n">2,237.6</td><td class="n">52 × 43</td></tr>
-                  <tr><td>B02</td><td class="n">4,646.8</td><td class="n">99 × 51</td><td>B09</td><td class="n">3,141.3</td><td class="n">73 × 43</td></tr>
-                  <tr><td>B03</td><td class="n">2,763.3</td><td class="n">58 × 56</td><td>B10</td><td class="n">4,395.3</td><td class="n">103 × 46</td></tr>
-                  <tr><td>B04</td><td class="n">3,018.2</td><td class="n">58 × 52</td><td>B11</td><td class="n">2,407.3</td><td class="n">78 × 33</td></tr>
-                  <tr><td>B05</td><td class="n">4,237.1</td><td class="n">73 × 58</td><td>B12</td><td class="n">5,601.5</td><td class="n">180 × 60</td></tr>
-                  <tr><td>B06</td><td class="n">3,049.2</td><td class="n">107 × 59</td><td>B13</td><td class="n">1,713.0</td><td class="n">66 × 35</td></tr>
-                  <tr><td>B07</td><td class="n">1,294.4</td><td class="n">43 × 37</td><td></td><td></td><td></td></tr>
-                  <tr class="total"><td colspan="5">가구 13개 합계</td><td class="n">44,788.5</td></tr>
+                  <tr><td>B01</td><td>주거</td><td class="n">n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr><td>B02</td><td>주거</td><td class="n">n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr><td>…</td><td>…</td><td class="n">n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr class="total"><td colspan="2">가구 n개 합계 (+ 도로면 + 녹지 = 분모)</td><td class="n">n</td><td></td><td class="n">n</td></tr>
                 </tbody></table></div>
             </div>
           </div>
@@ -460,24 +450,24 @@ claude</pre>
           <h3>획지</h3>
           <div class="body">
             <div class="text">
-              <p>Claude가 나눈 결과는 초안입니다. 규칙은 셋입니다. 가구에서 도로에 닿는 변 중 하나를 전면으로 잡는다. 전면을 따라 목표 전면폭(14 m)으로 자른다. 반대편도 도로에 닿고 깊이가 40 m 이상이면 가운데를 갈라 두 줄로 만든다.</p>
-              <div class="say"><button class="copy" data-copy>복사</button>03_가구 중 용도가 주거인 가구를 04_획지로 나눠 줘. 전면은 도로면(02_도로면과 04_도시계획도로)에 닿는 변 중 획지 깊이가 25 m에 가장 가까워지는 변으로 잡고, 전면폭 14 m 목표로 균등 분할, 반대편도 도로에 닿고 깊이 40 m 이상이면 두 줄로. 번호는 B01-01 식으로. 면적(5186)·전면폭(도로에 닿는 가장 긴 직선 변)·깊이(면적/전면폭)·세장비·접도연장(도로에 닿는 길이 전부)·맹지(접도 1 m 미만)를 채우고, 획지유형은 140 미만 '기준 미달', 660 이상 '기준 초과', 그 사이는 소(250 미만)·중(400 미만)·대로. 선을 폴리곤화하기 전에 반드시 노드 처리(unaryUnion)를 하고, 20 ㎡ 미만 조각은 버리되 알려 줘. 가구마다 획지수도 채워 줘</div>
+              <p>Claude가 나눈 결과는 초안입니다. 규칙은 셋입니다. 가구에서 도로에 닿는 변 중 하나를 전면으로 잡는다. 전면을 따라 목표 전면폭(n m)으로 자른다. 반대편도 도로에 닿고 깊이가 n m 이상이면 가운데를 갈라 두 줄로 만든다.</p>
+              <div class="say"><button class="copy" data-copy>복사</button>03_가구 중 용도가 주거인 가구를 04_획지로 나눠 줘. 전면은 도로면(02_도로면과 04_도시계획도로)에 닿는 변 중 획지 깊이가 n m에 가장 가까워지는 변으로 잡고, 전면폭 n m 목표로 균등 분할, 반대편도 도로에 닿고 깊이 n m 이상이면 두 줄로. 번호는 B01-01 식으로. 면적(5186)·전면폭(도로에 닿는 가장 긴 직선 변)·깊이(면적/전면폭)·세장비·접도연장(도로에 닿는 길이 전부)·맹지(접도 n m 미만)를 채우고, 획지유형은 n 미만 '기준 미달', n 이상 '기준 초과', 그 사이는 소(n 미만)·중(n 미만)·대로. 선을 폴리곤화하기 전에 반드시 노드 처리(unaryUnion)를 하고, n ㎡ 미만 조각은 버리되 알려 줘. 가구마다 획지수도 채워 줘</div>
               <p class="tools">도구 <code>execute_code</code>(unaryUnion → polygonize) — 유형별 집계는 <code>execute_sql</code></p>
-              <p>확인: 획지 105개. 중(250~400 ㎡) 77, 대 16, 소 4. 기준 미달 7개는 사선 경계(대로1류 변)에서 생긴 조각이고 그중 4개가 맹지입니다. 기준 초과 1개(B12-01, 822 ㎡)는 남쪽 A2 경계 쪽 깊이 60 m 가구가 한 줄로 잘린 자리입니다. 둘 다 계산 오류가 아니라 계획에서 고칠 항목입니다.</p>
-              <div class="callout"><b>초안에서 고칠 것.</b> 사선 경계의 조각은 이웃 획지와 합치거나 녹지로 넘깁니다. 깊이 60 m 가구는 골목을 하나 더 넣어 두 줄로 만듭니다. 모퉁이 획지는 긴 쪽이 전면으로 잡히므로 조서에서 전면폭을 확인합니다. 이 세 가지는 손으로 고칩니다.</div>
+              <p>확인: 획지 n개. 유형별 수와 맹지 수를 표로 봅니다. 사선 경계(대로1류 변)에서 생긴 조각은 기준 미달·맹지로, 깊은 가구가 한 줄로 잘린 자리는 기준 초과로 나타납니다. 둘 다 계산 오류가 아니라 계획에서 고칠 항목입니다.</p>
+              <div class="callout"><b>초안에서 고칠 것.</b> 사선 경계의 조각은 이웃 획지와 합치거나 녹지로 넘깁니다. 깊은 가구는 골목을 하나 더 넣어 두 줄로 만듭니다. 모퉁이 획지는 긴 쪽이 전면으로 잡히므로 조서에서 전면폭을 확인합니다. 이 세 가지는 손으로 고칩니다.</div>
             </div>
             <div class="side">
-              <div class="fig"><figure><img src="img/step4_lots.png" alt="획지 105개가 유형별 색으로 칠해진 A1. 사선 경계의 붉은 조각, B12 서쪽의 보라색 기준 초과 획지, 공원·상업·공용 가구가 보인다" width="1200" height="930" loading="lazy"><figcaption>V · 획지 105개. 붉은색이 기준 미달, 보라가 기준 초과.</figcaption></figure></div>
-              <div class="fig"><figure><img src="img/step5_lot_closeup.png" alt="B03·B04·B07·B11·B13 확대. 획지마다 번호, 면적, 전면폭×깊이가 적혀 있다" width="1400" height="1100" loading="lazy"><figcaption>확대 · 번호 / 면적 / 전면폭 × 깊이. B03-05 같은 0 m 전면이 맹지 조각.</figcaption></figure></div>
+              <div class="fig"><figure><img src="img/step4_lots.png" alt="획지가 유형별 색으로 칠해진 A1. 사선 경계의 붉은 조각, 보라색 기준 초과 획지, 공원·상업·공용 가구가 보인다" width="1200" height="930" loading="lazy"><figcaption>V · 획지 n개(예시). 붉은색이 기준 미달, 보라가 기준 초과.</figcaption></figure></div>
+              <div class="fig"><figure><img src="img/step5_lot_closeup.png" alt="B03·B04·B07·B11·B13 확대. 획지마다 번호, 면적, 전면폭×깊이가 적혀 있다" width="1400" height="1100" loading="lazy"><figcaption>확대 · 번호 / 면적 / 전면폭 × 깊이. 전면 0 m가 맹지 조각.</figcaption></figure></div>
               <div class="tbl"><table>
-                <thead><tr><th>유형</th><th class="n">수</th><th class="n">면적 범위</th><th class="n">평균 전면×깊이</th><th class="n">맹지</th></tr></thead>
+                <thead><tr><th>유형</th><th class="n">수</th><th class="n">면적 범위 ㎡</th><th class="n">평균 전면×깊이 m</th><th class="n">맹지</th></tr></thead>
                 <tbody>
-                  <tr><td><span class="tag bad">기준 미달</span></td><td class="n">7</td><td class="n">21 ~ 137</td><td class="n">2.4 × 38.1</td><td class="n">4</td></tr>
-                  <tr><td>소</td><td class="n">4</td><td class="n">164 ~ 250</td><td class="n">13.3 × 15.7</td><td class="n">0</td></tr>
-                  <tr><td>중</td><td class="n">77</td><td class="n">256 ~ 400</td><td class="n">15.9 × 22.7</td><td class="n">0</td></tr>
-                  <tr><td>대</td><td class="n">16</td><td class="n">408 ~ 584</td><td class="n">17.5 × 28.6</td><td class="n">0</td></tr>
-                  <tr><td><span class="tag warn">기준 초과</span></td><td class="n">1</td><td class="n">822</td><td class="n">33.0 × 24.9</td><td class="n">0</td></tr>
-                  <tr class="total"><td>계</td><td class="n">105</td><td class="n"></td><td class="n"></td><td class="n">4</td></tr>
+                  <tr><td><span class="tag bad">기준 미달</span></td><td class="n">n</td><td class="n">&lt; n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr><td>소</td><td class="n">n</td><td class="n">n ~ n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr><td>중</td><td class="n">n</td><td class="n">n ~ n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr><td>대</td><td class="n">n</td><td class="n">n ~ n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr><td><span class="tag warn">기준 초과</span></td><td class="n">n</td><td class="n">≥ n</td><td class="n">n × n</td><td class="n">n</td></tr>
+                  <tr class="total"><td>계</td><td class="n">n</td><td class="n"></td><td class="n"></td><td class="n">n</td></tr>
                 </tbody></table></div>
             </div>
           </div>
@@ -491,29 +481,29 @@ claude</pre>
           <h3>용지와 제원표</h3>
           <div class="body">
             <div class="text">
-              <p>가구에 용도를 지정하면 제원표가 됩니다. 데모는 B05 공원, B08 상업, B09 공용·커뮤니티, 나머지 주거입니다. 주거가 아닌 가구의 획지는 지웁니다.</p>
-              <div class="say"><button class="copy" data-copy>복사</button>03_가구에서 B05는 공원, B08은 상업, B09는 공용·커뮤니티로 바꾸고 그 가구의 획지는 04_획지에서 지워 줘. 그다음 05_용지를 다시 만들어 줘: 가구 용도별 합, 도로면, 완충녹지. 양식 1 형식(용지 × ㎡ · %)으로 표를 만들고 분모는 55,514, 합계와 분모의 차이는 '미배분' 행으로. 주거 획지 수를 호수로 보고 총밀도(분모 전체 5.5514 ha)와 순밀도(분모 주거용지)를 호/ha로 내 줘</div>
+              <p>가구에 용도를 지정하면 제원표가 됩니다(예: B05 공원, B08 상업, B09 공용·커뮤니티, 나머지 주거). 주거가 아닌 가구의 획지는 지웁니다.</p>
+              <div class="say"><button class="copy" data-copy>복사</button>03_가구에서 B05는 공원, B08은 상업, B09는 공용·커뮤니티로 바꾸고 그 가구의 획지는 04_획지에서 지워 줘. 그다음 05_용지를 다시 만들어 줘: 가구 용도별 합, 도로면, 완충녹지. 양식 1 형식(용지 × ㎡ · %)으로 표를 만들고 분모는 부지 면적, 합계와 분모의 차이는 '미배분' 행으로. 주거 획지 수를 호수로 보고 총밀도(분모 전체 부지)와 순밀도(분모 주거용지)를 호/ha로 내 줘</div>
               <p class="tools">도구 <code>update_features</code> · <code>delete_features</code> · <code>execute_code</code> · <code>evaluate_expression</code></p>
-              <p>확인: 오른쪽 표가 나와야 합니다. 주거 63.4 %는 55 %를 넘고 총밀도 18.9 호/ha는 11~17을 넘으므로 이 판은 F6·F10을 만족하지 않습니다. 조정 방법은 획지 확대(전면폭 16 m), 주거 가구 하나를 공원으로 전환, 또는 둘 다입니다.</p>
+              <p>확인: 오른쪽 표가 나와야 합니다. 용지 비율과 총밀도를 기준값과 대조해 판정을 적습니다. 기준을 넘으면 획지 확대, 주거 가구의 공원 전환 등으로 조정합니다.</p>
             </div>
             <div class="side">
               <div class="tbl"><table>
-                <caption>양식 1 · 토지이용 제원표 — A1 데모</caption>
+                <caption>양식 1 · 토지이용 제원표</caption>
                 <thead><tr><th>용지</th><th class="n">면적 ㎡</th><th class="n">비율 %</th><th>판정</th></tr></thead>
                 <tbody>
-                  <tr><td>주택건설용지</td><td class="n">35,171.2</td><td class="n">63.4</td><td><span class="tag warn">55 % 초과</span></td></tr>
-                  <tr><td>상업·업무용지</td><td class="n">2,237.6</td><td class="n">4.0</td><td><span class="tag ok">5 % 이내</span></td></tr>
-                  <tr><td>공공·커뮤니티시설용지</td><td class="n">3,141.3</td><td class="n">5.7</td><td><span class="tag ok">5 % 안팎</span></td></tr>
-                  <tr><td>공원</td><td class="n">4,237.1</td><td class="n">7.6</td><td rowspan="2"><span class="tag bad">공원+녹지 11.8 % &lt; 13 %</span></td></tr>
-                  <tr><td>녹지(완충)</td><td class="n">2,321.5</td><td class="n">4.2</td></tr>
-                  <tr><td>도로</td><td class="n">8,404.0</td><td class="n">15.1</td><td><span class="tag ok">≤ 22 %</span></td></tr>
-                  <tr><td>미배분</td><td class="n">1.3</td><td class="n">0.0</td><td><span class="tag ok">검산 통과</span></td></tr>
-                  <tr class="total"><td>합계 (분모 55,514)</td><td class="n">55,514.0</td><td class="n">100.0</td><td></td></tr>
+                  <tr><td>주택건설용지</td><td class="n">n</td><td class="n">n</td><td>기준 n % 대조</td></tr>
+                  <tr><td>상업·업무용지</td><td class="n">n</td><td class="n">n</td><td>기준 n % 대조</td></tr>
+                  <tr><td>공공·커뮤니티시설용지</td><td class="n">n</td><td class="n">n</td><td>기준 n % 대조</td></tr>
+                  <tr><td>공원</td><td class="n">n</td><td class="n">n</td><td rowspan="2">공원+녹지 ≥ n % 대조</td></tr>
+                  <tr><td>녹지(완충)</td><td class="n">n</td><td class="n">n</td></tr>
+                  <tr><td>도로</td><td class="n">n</td><td class="n">n</td><td>≤ n % 대조</td></tr>
+                  <tr><td>미배분</td><td class="n">n</td><td class="n">n</td><td>0에 가까워야 함</td></tr>
+                  <tr class="total"><td>합계 (분모 = 부지 면적)</td><td class="n">n</td><td class="n">100.0</td><td></td></tr>
                 </tbody></table></div>
               <div class="cards">
-                <div class="card"><div class="k">호수</div><div class="v">105<small>호</small></div><p>주거 획지 수. 기준 미달 7개를 빼면 98호.</p></div>
-                <div class="card"><div class="k">총밀도 · 분모 전체 5.551 ha</div><div class="v">18.9<small>호/ha</small></div><p><span class="tag warn">11~17 초과</span></p></div>
-                <div class="card"><div class="k">순밀도 · 분모 주거용지 3.517 ha</div><div class="v">29.9<small>호/ha</small></div><p>뉴욕 R2(27.2)보다 높음. 단독주택 20호/ha 계열과 어긋남.</p></div>
+                <div class="card"><div class="k">호수</div><div class="v">n<small>호</small></div><p>주거 획지 수. 기준 미달 획지는 뺀 수도 함께 적습니다.</p></div>
+                <div class="card"><div class="k">총밀도 · 분모 전체 부지</div><div class="v">n<small>호/ha</small></div><p>기준 n~n 호/ha와 대조.</p></div>
+                <div class="card"><div class="k">순밀도 · 분모 주거용지</div><div class="v">n<small>호/ha</small></div><p>분모를 반드시 병기합니다.</p></div>
               </div>
             </div>
           </div>
@@ -539,13 +529,13 @@ claude</pre>
     <div class="sec-head">
       <p class="eyebrow">04 · 조서 네 가지</p>
       <h2>조서 네 가지</h2>
-      <p>토지이용제원표·가구조서·획지조서·도로조서. 면적 열은 자동으로 나오고 전면폭·깊이·세장비·접도연장은 그린 도형에서 계산됩니다. 세 표의 합계는 분모 55,514와 같아야 하며, 각 표에 검산란을 둡니다.</p>
+      <p>토지이용제원표·가구조서·획지조서·도로조서. 면적 열은 자동으로 나오고 전면폭·깊이·세장비·접도연장은 그린 도형에서 계산됩니다. 세 표의 합계는 분모(부지 면적)와 같아야 하며, 각 표에 검산란을 둡니다.</p>
     </div>
     <div class="say"><button class="copy" data-copy>복사</button>plan_v1.gpkg에서 조서 네 개를 CSV로 만들어 줘. 도로조서(노선·위계·폭원·연장·폭원×연장, 합계란에 도로면 실측과 차이), 가구조서(가구·용도·면적·장변·단변·획지수), 획지조서(번호·가구·유형·면적·전면폭·깊이·세장비·접도연장·맹지), 토지이용제원표(양식 1). 전부 EPSG:5186, UTF-8 BOM으로 프로젝트 폴더의 조서 폴더에 저장하고, 세 표의 합계가 서로 맞는지 알려 줘</div>
     <div class="cards" style="margin-top:28px">
-      <div class="card"><div class="k">도로조서</div><h4>노선별 값과 실측을 나란히</h4><p>데모: 폭원×연장 합 8,742.5 vs 도로면 실측 8,404.0. 차이 338.5 ㎡는 교차부 중복과 녹지에 잘린 부분. 합계란에는 실측을 씁니다.</p></div>
-      <div class="card"><div class="k">가구조서</div><h4>가구 · 용도 · 면적 · 장변 · 단변 · 획지수</h4><p>가구 면적 합 + 도로 + 녹지 = 분모. 데모 44,788.5 + 8,404.0 + 2,321.5 = 55,514.0.</p></div>
-      <div class="card"><div class="k">획지조서</div><h4>전면폭 0, 세장비 3 이상 확인</h4><p>전면폭 0은 맹지, 세장비가 3을 넘으면 폭이 좁고 깊은 획지. 데모에서 B03-05(0 × 29), B01-11(1.1 × 127)이 그 예입니다.</p></div>
+      <div class="card"><div class="k">도로조서</div><h4>노선별 값과 실측을 나란히</h4><p>노선별 폭원×연장의 합과 도로면 실측을 나란히 적고, 차이(교차부 중복·녹지 절단)를 밝힙니다. 합계란에는 실측을 씁니다.</p></div>
+      <div class="card"><div class="k">가구조서</div><h4>가구 · 용도 · 면적 · 장변 · 단변 · 획지수</h4><p>가구 면적 합 + 도로 + 녹지 = 분모(부지 면적).</p></div>
+      <div class="card"><div class="k">획지조서</div><h4>전면폭 0, 세장비 3 이상 확인</h4><p>전면폭 0은 맹지, 세장비가 3을 넘으면 폭이 좁고 깊은 획지입니다.</p></div>
       <div class="card"><div class="k">CSV 인코딩</div><h4>Excel에서 한글이 깨지면 인코딩</h4><p>QGIS 기본 내보내기(<code>export_layer</code>)는 CP949로 저장되어 한국어 Excel에서 바로 열립니다. 다른 프로그램에서 열 때는 "UTF-8 BOM으로"라고 다시 시킵니다.</p></div>
     </div>
   </div>
@@ -565,7 +555,7 @@ claude</pre>
 
     <div class="cards" style="margin-top:32px">
       <div class="card" style="background:var(--dark-surface);border-color:var(--dark-line)"><div class="k" style="color:var(--dark-muted)">DXF 로 내보내기</div><h4 style="color:var(--dark-ink)">export_layer는 DXF에 실패</h4><p style="color:var(--dark-muted)">DXF는 임의 필드를 받지 않습니다. "QgsDxfExport로 다섯 레이어를 5179 DXF로 내보내 줘. 도로중심선은 위계, 용지는 용지 값을 레이어명으로"라고 시키면 레이어별 닫힌 폴리라인으로 나옵니다.</p></div>
-      <div class="card" style="background:var(--dark-surface);border-color:var(--dark-line)"><div class="k" style="color:var(--dark-muted)">AutoCAD에서 안 열리면</div><h4 style="color:var(--dark-ink)">ezdxf로 한 번 다시 저장</h4><p style="color:var(--dark-muted)">QGIS가 쓴 DXF는 코드페이지가 비어 있어 AutoCAD가 "Invalid or incomplete DXF input"으로 거부하거나 한글 레이어명이 깨질 수 있습니다. "ezdxf로 읽어 인코딩 cp949, $DWGCODEPAGE ANSI_949로 다시 저장해 줘". 이렇게 만든 파일은 AutoCAD 2026에서 AUDIT 오류 0, 획지 105개로 확인했습니다.</p></div>
+      <div class="card" style="background:var(--dark-surface);border-color:var(--dark-line)"><div class="k" style="color:var(--dark-muted)">AutoCAD에서 안 열리면</div><h4 style="color:var(--dark-ink)">ezdxf로 한 번 다시 저장</h4><p style="color:var(--dark-muted)">QGIS가 쓴 DXF는 코드페이지가 비어 있어 AutoCAD가 "Invalid or incomplete DXF input"으로 거부하거나 한글 레이어명이 깨질 수 있습니다. "ezdxf로 읽어 인코딩 cp949, $DWGCODEPAGE ANSI_949로 다시 저장해 줘". 이렇게 만든 파일은 AutoCAD 2026에서 AUDIT 오류 0으로 확인했습니다.</p></div>
       <div class="card" style="background:var(--dark-surface);border-color:var(--dark-line)"><div class="k" style="color:var(--dark-muted)">프로젝트 저장</div><h4 style="color:var(--dark-ink)">배포 qgz는 두고 다른 이름으로</h4><p style="color:var(--dark-muted)">"프로젝트를 buyeo_3km_plan_v1.qgz로 저장해 줘". 경로는 상대경로로 저장되므로 gpkg와 같은 폴더에 있어야 합니다. 폴더째 옮기는 것은 괜찮습니다.</p></div>
     </div>
   </div>
@@ -628,24 +618,6 @@ claude</pre>
   </div>
 </section>
 
-<!-- ───────────────────── 제출 ───────────────────── -->
-<section id="submit">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">08 · 제출물</p>
-      <h2>제출물</h2>
-      <p>LMS에 PDF 한 벌로 올립니다. 마감은 수업에서 정합니다.</p>
-    </div>
-    <div class="list">
-      <div><div><b>검산표</b><p>06의 다섯 가지. 여러분 화면의 값이 이 매뉴얼과 다르면 왜 다른지 한 줄.</p></div></div>
-      <div><div><b>도로 위계도와 도로조서</b><p>위계별 폭원과 연장, 합계란에 도로면 실측. 4위계 이상, 최하위 6 m.</p></div></div>
-      <div><div><b>가구·획지도(A3)와 조서 두 가지</b><p>가구조서·획지조서. 기준 미달·초과·맹지가 몇 개인지와 어떻게 처리했는지.</p></div></div>
-      <div><div><b>양식 1 토지이용 제원표와 밀도</b><p>미배분 행, 총밀도·순밀도에 분모 병기. F6·F10과 대조한 판정 한 줄씩.</p></div></div>
-      <div><div><b>판 세 가지 비교표</b><p>plan_v1·v2·v3의 용지별 계와 밀도를 한 표에.</p></div></div>
-      <div><div><b>못 한 것과 그 이유</b><p>어느 단계에서 어떤 오류 문구였는지.</p></div></div>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
