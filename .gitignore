@@ -1,0 +1,6 @@
+# 시스템 잡파일
+Thumbs.db
+desktop.ini
+*.gpkg-wal
+*.gpkg-shm
+__pycache__/
