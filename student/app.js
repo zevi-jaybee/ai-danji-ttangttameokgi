@@ -186,5 +186,9 @@ document.querySelectorAll('[data-map]').forEach(button => button.onclick = () =>
   $('#case-map').alt = isPlan ? '취락과 물길 보존을 우선한 한옥마을 계획 사례. 학생 과제의 확정안이 아님.' : 'B안 경계, 주변 도시계획도로와 유산 구역, 기존 대지·도로 필지';
   $('#map-caption').textContent = isPlan ? '설계 사례 · 물길과 마당을 잇는 한옥마을. 가정에 따른 제안이며 수업 정답이나 확정 설계조건이 아닙니다. 클릭하면 원본 지도를 봅니다.' : '자료 화면 · B안 경계, 주변 도시계획도로·유산 구역, 기존 대지·도로 필지. 현재 이용 현황 전체를 조사한 지도는 아닙니다.';
 });
-$('#mcp-icon a').onclick = event => { event.preventDefault(); selectStep(1); };
+const connectionLink = $('#mcp-icon a');
+connectionLink.href = '#connect';
+connectionLink.onclick = event => { event.preventDefault(); location.hash = 'connect'; selectStep(1); };
+window.addEventListener('hashchange', () => { if (location.hash === '#connect') selectStep(1); });
 renderLesson(); renderIssue();
+if (location.hash === '#connect') selectStep(1);
